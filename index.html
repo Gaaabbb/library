@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <i class="fa-solid fa-plus"></i>
+
+    <div class="form-background form-add-background form-background-collapsed"></div>
+    <form id="book-form-add" class="book-form-collapsed">
+
+        <h1>Add New Book</h1>
+        <i class="fa-solid fa-xmark"></i>
+
+        <label for="title-input-add">
+            <p>Title:</p>
+            <input type="text" id="title-input-add" name="title" autocomplete="off" spellcheck="false" required>
+        </label>
+                
+        <label for="author-input-add">
+            <p>Author:</p>
+            <input type="text" id="author-input-add" name="author" autocomplete="off" spellcheck="false" required>
+        </label>
+
+        <label for="page-input-add">
+            <p>Page/s:</p>
+            <input type="number" id="page-input-add" name="page" autocomplete="off" spellcheck="false" required>
+        </label>
+
+        <label for="status-input-add">
+            <p>Status:</p>
+            <select name="status" id="status-input-add" required>
+                <option>Want To Read</option>
+                <option>Currently Reading</option>
+                <option>Read</option>
+            </select>
+        </label>
+
+        <button type="submit">Add Book</button>
+
+    </form>
+
+    <div class="form-background form-edit-background form-background-collapsed"></div>
+    <form id="book-form-edit" class="book-form-collapsed">
+        
+        <h1>Edit Book</h1>
+        <i class="fa-solid fa-xmark"></i>
+
+        <label for="title-input">
+            <p>Title:</p>
+            <input type="text" id="title-input-edit" name="title" autocomplete="off" spellcheck="false" required>
+        </label>
+                
+        <label for="author-input">
+            <p>Author:</p>
+            <input type="text" id="author-input-edit" name="author" autocomplete="off" spellcheck="false" required>
+        </label>
+
+        <label for="page-input">
+            <p>Page/s:</p>
+            <input type="number" id="page-input-edit" name="page" autocomplete="off" spellcheck="false" required>
+        </label>
+
+        <label for="status-input">
+            <p>Status:</p>
+            <select name="status" id="status-input-edit" required>
+                <option>Want To Read</option>
+                <option>Currently Reading</option>
+                <option>Read</option>
+            </select>
+        </label>
+
+        <button type="submit">Apply</button>
+
+    </form>
+
+
+
+    <div class="header">
+        <h1>Library</h1>
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+
+
+    <div class="library-info-background library-info-background-collapsed"></div>
+    <div class="library-info library-info-collapsed">
+        <i class="fa-solid fa-xmark fa-xmark-collapsed"></i>
+
+        <div class="library-info-item-container container-selected">
+            <h2 class="all">All</h2>
+            <p class="all-total status-total">0</p>
+        </div>
+        <div class="divider"></div>
+        <div class="library-info-item-container">
+            <h2 class="want-to-read">Want To Read</h2>
+            <p class="want-to-read-total status-total">0</p>
+        </div>
+        <div class="divider"></div>
+        <div class="library-info-item-container">
+            <h2 class="currently-reading">Currently Reading</h2>
+            <p class="currently-reading-total status-total">0</p>
+        </div>
+        <div class="divider"></div>
+        <div class="library-info-item-container">
+            <h2 class="read">Read</h2>
+            <p class="read-total status-total">0</p>
+        </div>
+    </div>
+
+
+
+    <div class="library">
+        <div class="want-to-read-container status-container">
+
+            <div class="status-header-container">
+                <h3 class="want-to-read-header">Want To Read</h3>
+                <p class="want-to-read-total status-total">0</p>
+            </div>
+
+            <div class="book-container"></div>
+                
+        </div>
+
+        <div class="currently-reading-container status-container">
+
+            <div class="status-header-container">
+                <h3 class="currently-reading-header">Currently Reading</h3>
+                <p class="currently-reading-total status-total">0</p>
+            </div>
+
+            <div class="book-container"></div>
+
+        </div>
+
+        <div class="read-container status-container">
+
+            <div class="status-header-container">
+                <h3 class="read-header">Read</h3>
+                <p class="read-total status-total">0</p>
+            </div>
+
+            <div class="book-container"></div>
+
+        </div>
+        
+    </div>
+</body>
+</html>
