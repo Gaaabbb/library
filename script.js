@@ -40,24 +40,6 @@ function addLibraryToDOM() {
 
         const bookCard = makeElementAndClass('div', ['book'])
         bookObject.appendBookToStatusBelonged(bookCard)
-        
-        //Loops through propertiestatusContainers in book object, then add
-        //each to book card and DOM
-        for (key in bookObject) {
-            if (bookObject.hasOwnProperty(key)) {
-            
-                const element = makeElementAndClass
-                ('p', [key, 'book-info'], bookCard)
-
-                if (key === 'page') {
-                    if (parseInt(bookObject[key]) < 2) {
-                        element.textContent = `${bookObject[key]} Page`
-                    }
-                    else element.textContent = `${bookObject[key]} Pages`
-                }
-                else element.textContent = bookObject[key]
-            }
-        }
 
         const deleteButton = makeElementAndClass
         ('i', ['fa-solid', 'fa-xmark'], bookCard)
@@ -65,7 +47,27 @@ function addLibraryToDOM() {
 
         const editBookButton = makeElementAndClass
         ('i', ['fa-solid', 'fa-ellipsis'], bookCard)
-        bookObject.editBook(bookCard, editBookButton)   
+        bookObject.editBook(bookCard, editBookButton) 
+        
+        //Loops through propertiestatusContainers in book object, then add
+        //each to book card and DOM
+        for (key in bookObject) {
+            if (bookObject.hasOwnProperty(key)) {
+                const element = makeElementAndClass
+                ('p', [key, 'book-info'], bookCard)
+
+                if (key === 'author') {
+                    element.textContent = `By: ${bookObject[key]}`
+                }
+                else if (key === 'page') {
+                    if (parseInt(bookObject[key]) < 2) {
+                        element.textContent = `${bookObject[key]} Page`
+                    }
+                    else element.textContent = `${bookObject[key]} Pages`
+                }
+                else element.textContent = bookObject[key]
+            }
+        }  
     }
 }
 
@@ -97,7 +99,20 @@ Book.prototype.editBook = function (bookCard, button) {
 
             for (i = 0; i < 4; i++) {
                 this[bookKeysArray[i]] = returnVisibleInputs()[i].value
-                bookInfoArray[i].textContent = returnVisibleInputs()[i].value 
+
+                if (i === 1) {
+                    bookInfoArray[i].textContent = `By: ${returnVisibleInputs()[i].value}` 
+                }
+                else if (i === 2) {
+                    if (parseInt(returnVisibleInputs()[i].value) < 2) {
+                        bookInfoArray[i].textContent = 
+                        `${returnVisibleInputs()[i].value} Page`
+                    }
+                    else {
+                        bookInfoArray[i].textContent = `${returnVisibleInputs()[i].value} Pages`
+                    }
+                }
+                else bookInfoArray[i].textContent = returnVisibleInputs()[i].value 
             }
 
             this.appendBookToStatusBelonged(bookCard, this)

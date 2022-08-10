@@ -193,14 +193,17 @@ form .fa-xmark {
 .book .title {
     width: 100%;
     margin-bottom: 30px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
     word-break: break-word;
 }
 .book .author,
 .book .page {
     margin-top: 15px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+}
+.book .status {
+    display: none;
 }
 .book::-webkit-scrollbar {
     width: 5px;
