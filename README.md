@@ -1,5 +1,5 @@
 <h1 align="center">Library</h1>
-<h3 align="center"><a href="https://gaaabbb.github.io/tic-tac-toe/">:film_projector: Live Demo</a></h3>
+<h3 align="center"><a href="https://gaaabbb.github.io/library/">:film_projector: Live Demo</a></h3>
 
 ![Live Demo](gallery/live-demo.gif)
 
